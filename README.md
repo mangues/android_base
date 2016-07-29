@@ -21,3 +21,5 @@
 >2.SecureSharedPreferences，获取安全的SharePreferences，采用RSA 加salt及向量的 对key与value一起加密的SharePreferences
 
 
+##token、sign 认证
+>用户token,和url 的sign认证
