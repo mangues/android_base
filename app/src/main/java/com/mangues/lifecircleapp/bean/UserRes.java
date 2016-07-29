@@ -14,16 +14,16 @@ public class UserRes implements Serializable {
      * Created by mangues on 16/7/27.
      */
 
-    private User user;
+    private User userModel;
     private String token;
 
 
     public User getUser() {
-        return user;
+        return userModel;
     }
 
     public void setUser(User user) {
-        this.user = user;
+        this.userModel = user;
     }
 
     public String getToken() {

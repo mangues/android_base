@@ -16,6 +16,7 @@
 
 package com.mangues.lifecircleapp.data.net.retrofitrxjava;
 
+import com.mangues.lifecircleapp.base.BaseBean;
 import com.mangues.lifecircleapp.bean.BaseRes;
 import com.mangues.lifecircleapp.bean.UserRes;
 import com.mangues.lifecircleapp.data.net.Constant;
@@ -73,16 +74,12 @@ public class NetworkDateSource {
                 @Override
                 public Response intercept(Chain chain) throws IOException {
                     Request request = chain.request();
-                    Request newRequest = request.newBuilder()
-                            //.addHeader("accept", "application/json")
-                            .addHeader("Content-Language", "zh-CN")
-                            .addHeader("Accept-Language", "zh-CN")
-                            .build();
-                    Headers headers = request.headers();
+                    Request newRequest = SignUtil.getSignUrl(request);
+                    Headers headers = newRequest.headers();
 
+                    MLogger.e("request url:"+newRequest.toString());
 
-                    MLogger.e("request url:"+request.toString());
-                    MLogger.e("request headers:");
+//                    MLogger.e("request headers:");
                     Map<String, List<String>> headerListMap = headers.toMultimap();
                     for(Map.Entry<String, List<String>> entry : headerListMap.entrySet()){
                         List<String> values = entry.getValue();
@@ -90,9 +87,9 @@ public class NetworkDateSource {
                         for(String value : values){
                             sb.append(value).append(" ");
                         }
-                        MLogger.e("   "+entry.getKey()+"="+sb.toString());
+//                        MLogger.e("   "+entry.getKey()+"="+sb.toString());
                     }
-                    MLogger.e("request body:");
+//                    MLogger.e("request body:");
 
 
                     Response proceed = chain.proceed(newRequest);
@@ -106,6 +103,7 @@ public class NetworkDateSource {
                     if (contentType != null) {
                         charset = contentType.charset(UTF8);
                     }
+                    MLogger.e("返回值:");
 
                     if (responseBody.contentLength() != 0) {
                         //logger.log("");
@@ -147,6 +145,18 @@ public class NetworkDateSource {
      */
     public Subscription login(String username, String password, Action1<BaseRes<UserRes>> action1, Action1<Throwable> onError){
         return doSubscription(mHttpApi.login(username,password),action1,onError);
+    }
+
+    /**
+     * 测试
+     * @param username
+     * @param password
+     * @param action1
+     * @param onError
+     * @return
+     */
+    public Subscription test(String username, String password, Action1<BaseBean> action1, Action1<Throwable> onError){
+        return doSubscription(mHttpApi.test(username,password),action1,onError);
     }
 
 

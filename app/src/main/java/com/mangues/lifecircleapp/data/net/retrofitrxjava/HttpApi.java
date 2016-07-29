@@ -42,6 +42,11 @@ public interface HttpApi {
     Observable<BaseRes<UserRes>> login(@Query("name") String username, @Query("password") String password);
 
 
+    @POST("app/test")
+    Observable<BaseBean> test(@Query("name") String username, @Query("password") String password);
+
+
+
 //    /**
 //     * 获取验证码并发送短信到手机上
 //     *

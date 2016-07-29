@@ -16,6 +16,7 @@
 
 package com.mangues.lifecircleapp.presenter;
 
+import com.mangues.lifecircleapp.base.BaseBean;
 import com.mangues.lifecircleapp.base.basemvp.BasePresenter;
 import com.mangues.lifecircleapp.bean.BaseRes;
 import com.mangues.lifecircleapp.bean.UserRes;
@@ -23,11 +24,9 @@ import com.mangues.lifecircleapp.data.cache.SecureSharedPreferences;
 import com.mangues.lifecircleapp.data.enjine.GlobalVariables;
 import com.mangues.lifecircleapp.data.net.retrofitrxjava.ErrorAction;
 import com.mangues.lifecircleapp.data.net.retrofitrxjava.NetworkDateSource;
-import com.mangues.lifecircleapp.log.MLogger;
-import com.mangues.lifecircleapp.mvpview.BaseMvpView;
 import com.mangues.lifecircleapp.data.net.retrofitrxjava.SubscribeResult;
+import com.mangues.lifecircleapp.log.MLogger;
 import com.mangues.lifecircleapp.mvpview.LoginMvpView;
-
 
 import javax.inject.Inject;
 
@@ -38,30 +37,25 @@ import rx.Subscription;
  * <br /> date: 16/1/18
  * <br /> email: chenshufei2@sina.com
  */
-public class LoginPresenter extends BasePresenter<LoginMvpView> {
+public class TestPresenter extends BasePresenter<LoginMvpView> {
 
     private NetworkDateSource mNetworkDateSource;
 
     @Inject
-    public LoginPresenter() {
+    public TestPresenter() {
         this.mNetworkDateSource = NetworkDateSource.getInstance();
     }
 
-    public void login(final String username, final String password) {
+    public void test(final String username, final String password) {
         getMvpView().showLoadingDialog();
-        Subscription loginSubscription = mNetworkDateSource.login(username, password, new SubscribeResult<BaseRes<UserRes>>() {
+        Subscription loginSubscription = mNetworkDateSource.test(username, password, new SubscribeResult<BaseBean>() {
             @Override
-            protected void onOk(BaseRes<UserRes> response) {
+            protected void onOk(BaseBean response) {
                 getMvpView().dismissLoadingDialog();
-                SecureSharedPreferences.putString("username", username);
-                SecureSharedPreferences.putString("userId", response.getOj().getUser().getId()+"");
-                SecureSharedPreferences.putString("password", password);
-                SecureSharedPreferences.putString("token",response.getOj().getToken());
-                GlobalVariables.getInstance().setUserRes(response.getOj());
                 getMvpView().onSuccess(response);
             }
 
-            protected void onFailure(BaseRes<UserRes> response) {
+            protected void onFailure(BaseBean response) {
                 getMvpView().dismissLoadingDialog();
                 MLogger.d("2",this);
                 getMvpView().onError("失败");
