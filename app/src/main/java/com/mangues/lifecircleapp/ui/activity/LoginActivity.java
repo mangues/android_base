@@ -1,21 +1,17 @@
 package com.mangues.lifecircleapp.ui.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import com.mangues.lifecircleapp.R;
 import com.mangues.lifecircleapp.base.basemvp.BasePresenter;
-import com.mangues.lifecircleapp.mvpview.BaseMvpView;
-import com.mangues.lifecircleapp.mvpview.LoginMvpView;
 import com.mangues.lifecircleapp.presenter.LoginPresenter;
 import com.mangues.lifecircleapp.presenter.TestPresenter;
-
+import com.mangues.lifecircleapp.mvpview.LoginMvpView;
 import javax.inject.Inject;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class LoginActivity extends BaseActivity implements LoginMvpView{

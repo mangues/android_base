@@ -1,4 +1,4 @@
-package com.mangues.lifecircleapp.fragment;
+package com.mangues.lifecircleapp.ui.fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,7 +19,7 @@ public class RecommendFragment extends BaseFragement {
     }
 
     @Override
-    protected String getTitle() {
+    protected String getTopTitle() {
         return "早上好";
     }
 }

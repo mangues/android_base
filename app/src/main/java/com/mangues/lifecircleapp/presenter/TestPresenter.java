@@ -18,10 +18,6 @@ package com.mangues.lifecircleapp.presenter;
 
 import com.mangues.lifecircleapp.base.BaseBean;
 import com.mangues.lifecircleapp.base.basemvp.BasePresenter;
-import com.mangues.lifecircleapp.bean.BaseRes;
-import com.mangues.lifecircleapp.bean.UserRes;
-import com.mangues.lifecircleapp.data.cache.SecureSharedPreferences;
-import com.mangues.lifecircleapp.data.enjine.GlobalVariables;
 import com.mangues.lifecircleapp.data.net.retrofitrxjava.ErrorAction;
 import com.mangues.lifecircleapp.data.net.retrofitrxjava.NetworkDateSource;
 import com.mangues.lifecircleapp.data.net.retrofitrxjava.SubscribeResult;
