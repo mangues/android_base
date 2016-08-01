@@ -19,6 +19,7 @@ package com.mangues.lifecircleapp.injection.component;
 
 import com.mangues.lifecircleapp.injection.PerActivity;
 import com.mangues.lifecircleapp.injection.module.FragmentModule;
+import com.mangues.lifecircleapp.ui.fragment.RecommendFragment;
 
 import dagger.Component;
 
@@ -32,5 +33,6 @@ import dagger.Component;
 public interface FrgmentComponent {
 
 
+    void inject(RecommendFragment recommendFragment);
 }
 

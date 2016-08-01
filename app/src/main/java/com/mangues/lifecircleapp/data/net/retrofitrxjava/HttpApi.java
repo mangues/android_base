@@ -17,17 +17,16 @@
 package com.mangues.lifecircleapp.data.net.retrofitrxjava;
 
 import com.mangues.lifecircleapp.base.BaseBean;
-import com.mangues.lifecircleapp.bean.BaseRes;
-import com.mangues.lifecircleapp.bean.UserRes;
-import com.squareup.okhttp.RequestBody;
-import com.squareup.okhttp.ResponseBody;
+import com.mangues.lifecircleapp.bean.LocationInfo;
+import com.mangues.lifecircleapp.model.BaseRes;
+import com.mangues.lifecircleapp.model.CircleModel;
+import com.mangues.lifecircleapp.model.UserRes;
 
-import retrofit.http.GET;
-import retrofit.http.Multipart;
+import butterknife.Bind;
+import retrofit.http.Body;
 import retrofit.http.POST;
-import retrofit.http.Part;
 import retrofit.http.Query;
-import retrofit.http.Url;
+import retrofit.http.QueryMap;
 import rx.Observable;
 
 
@@ -44,8 +43,8 @@ public interface HttpApi {
 
     @POST("app/test")
     Observable<BaseBean> test(@Query("name") String username, @Query("password") String password);
-
-
+    @POST("app/circle/list")
+    Observable<BaseRes<CircleModel>> circleList(@Query("longitude") Double longitude, @Query("latitude") Double latitude);
 
 //    /**
 //     * 获取验证码并发送短信到手机上

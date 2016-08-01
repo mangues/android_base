@@ -1,7 +1,6 @@
 package com.mangues.lifecircleapp.data.enjine;
 
-import com.mangues.lifecircleapp.bean.User;
-import com.mangues.lifecircleapp.bean.UserRes;
+import com.mangues.lifecircleapp.model.UserRes;
 
 
 import java.io.IOException;

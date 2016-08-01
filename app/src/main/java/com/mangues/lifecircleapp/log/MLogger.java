@@ -1,6 +1,9 @@
 package com.mangues.lifecircleapp.log;
 
+import com.alibaba.fastjson.JSON;
 import com.orhanobut.logger.Logger;
+
+import java.util.List;
 
 /**
  * Created by mangues on 16/7/27.
@@ -64,6 +67,10 @@ public class MLogger {
      */
     public static void json(String json) {
         Logger.json(json);
+    }
+
+    public static void json(List list) {
+        Logger.json(JSON.toJSONString(list));
     }
 
     /**

@@ -65,7 +65,9 @@ public abstract class BaseActivity extends AppCompatActivity implements MvpView 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        applyKitKatTranslucency();
+        if (isBarTint){
+            applyKitKatTranslucency();
+        }
         init();
     }
 
@@ -119,7 +121,7 @@ public abstract class BaseActivity extends AppCompatActivity implements MvpView 
         if (null != toolView){
             mToolbar = (Toolbar) toolView;
             setSupportActionBar(mToolbar);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(isBack());
+//            getSupportActionBar().setDisplayHomeAsUpEnabled(isBack());
             mTitleTextView = (TextView) toolView.findViewById(R.id.tv_title);
             mIv_center_log = (ImageView) toolView.findViewById(R.id.iv_center_log);
 
@@ -153,7 +155,7 @@ public abstract class BaseActivity extends AppCompatActivity implements MvpView 
         }
     }
     protected abstract CharSequence getTopTitle() ;
-    protected abstract boolean isBack() ;
+//    protected abstract boolean isBack() ;
 
 
     /**
@@ -274,6 +276,13 @@ public abstract class BaseActivity extends AppCompatActivity implements MvpView 
 
 
 
+    private int color = R.color.colorPrimary;
+    private boolean isBarTint = true;
+    protected void  setStatusBarTintResource(int color,boolean isBarTint){
+        this.color = color;
+        this.isBarTint = isBarTint;
+    }
+
     /**
      * Apply KitKat specific translucency.
      */
@@ -287,7 +296,7 @@ public abstract class BaseActivity extends AppCompatActivity implements MvpView 
         mTintManager.setStatusBarTintEnabled(true);
         mTintManager.setNavigationBarTintEnabled(true);
 //           mTintManager.setTintColor(getResources().getColor(R.color.colorAccent));
-        mTintManager.setStatusBarTintResource(R.color.colorAccent);//通知栏所需颜色
+        mTintManager.setStatusBarTintResource(color);//通知栏所需颜色
 
     }
 

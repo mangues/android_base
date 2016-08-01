@@ -13,14 +13,13 @@
             android:id="@+id/appbar"
             layout="@layout/toolbar" />
 
-        <FrameLayout
-            android:id="@+id/frame_content"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/appbar"
-            android:scrollbars="none"
-            android:elevation="5dp"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+       <com.mangues.lifecircleapp.view.MyListView
+           android:id="@+id/list"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+
+       </com.mangues.lifecircleapp.view.MyListView>
+
 
     </android.support.design.widget.CoordinatorLayout>
 </LinearLayout>

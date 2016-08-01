@@ -17,16 +17,17 @@
 package com.mangues.lifecircleapp.presenter;
 
 import com.mangues.lifecircleapp.base.basemvp.BasePresenter;
+import com.mangues.lifecircleapp.bean.LocationInfo;
 import com.mangues.lifecircleapp.model.BaseRes;
+import com.mangues.lifecircleapp.model.CircleModel;
 import com.mangues.lifecircleapp.model.UserRes;
 import com.mangues.lifecircleapp.data.cache.SecureSharedPreferences;
 import com.mangues.lifecircleapp.data.enjine.GlobalVariables;
 import com.mangues.lifecircleapp.data.net.retrofitrxjava.ErrorAction;
 import com.mangues.lifecircleapp.data.net.retrofitrxjava.NetworkDateSource;
-import com.mangues.lifecircleapp.log.MLogger;
 import com.mangues.lifecircleapp.data.net.retrofitrxjava.SubscribeResult;
-import com.mangues.lifecircleapp.mvpview.LoginMvpView;
-
+import com.mangues.lifecircleapp.log.MLogger;
+import com.mangues.lifecircleapp.mvpview.CircleMvpView;
 
 import javax.inject.Inject;
 
@@ -37,39 +38,32 @@ import rx.Subscription;
  * <br /> date: 16/1/18
  * <br /> email: chenshufei2@sina.com
  */
-public class LoginPresenter extends BasePresenter<LoginMvpView> {
+public class CirclePresenter extends BasePresenter<CircleMvpView> {
 
     private NetworkDateSource mNetworkDateSource;
 
     @Inject
-    public LoginPresenter() {
+    public CirclePresenter() {
         this.mNetworkDateSource = NetworkDateSource.getInstance();
     }
 
-    public void login(final String username, final String password) {
+    public void circleList(final LocationInfo locationInfo) {
         getMvpView().showLoadingDialog();
-        Subscription loginSubscription = mNetworkDateSource.login(username, password, new SubscribeResult<BaseRes<UserRes>>() {
+        Subscription loginSubscription = mNetworkDateSource.circleList(locationInfo, new SubscribeResult<BaseRes<CircleModel>>() {
             @Override
-            protected void onOk(BaseRes<UserRes> response) {
+            protected void onOk(BaseRes<CircleModel> response) {
                 getMvpView().dismissLoadingDialog();
-                SecureSharedPreferences.putString("username", username);
-                SecureSharedPreferences.putString("userId", response.getOj().getUser().getId()+"");
-                SecureSharedPreferences.putString("password", password);
-                SecureSharedPreferences.putString("token",response.getOj().getToken());
-                GlobalVariables.getInstance().setUserRes(response.getOj());
                 getMvpView().onSuccess(response);
             }
 
-            protected void onFailure(BaseRes<UserRes> response) {
+            protected void onFailure(BaseRes<CircleModel> response) {
                 getMvpView().dismissLoadingDialog();
-                MLogger.d("2",this);
                 getMvpView().onError("失败");
             }
         }, new ErrorAction(getMvpView()) {
             @Override
             public void onCall(Throwable throwable) {
                 getMvpView().dismissLoadingDialog();
-                MLogger.d("3",this);
                 getMvpView().onError("失败");
             }
         });

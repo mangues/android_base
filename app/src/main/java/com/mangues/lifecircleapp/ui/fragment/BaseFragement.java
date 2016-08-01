@@ -65,20 +65,15 @@ public abstract class BaseFragement extends Fragment implements MvpView{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        applyKitKatTranslucency();
+        if (isBarTint){
+            applyKitKatTranslucency();
+        }
         mContext  = getActivity();
         init();
     }
 
     View view;
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        view = getLayoutView(inflater,container);
-        mToolbar = (Toolbar) view.findViewById(R.id.toolbar);
-        ((AppCompatActivity) getActivity()).setSupportActionBar(mToolbar);
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-        return view;
-    }
+
 
 
     @Override
@@ -192,7 +187,6 @@ public abstract class BaseFragement extends Fragment implements MvpView{
             return "";
     }
 
-    protected abstract View  getLayoutView(LayoutInflater inflater,ViewGroup container);
     protected void showLog(String msg) {
         MLogger.i(TAG, msg);
     }
@@ -237,7 +231,17 @@ public abstract class BaseFragement extends Fragment implements MvpView{
         }
     }
 
-
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        ButterKnife.unbind(this);
+        if (null != mPresenters && mPresenters.length > 0){
+            for (BasePresenter presenter : mPresenters){
+                presenter.detachView();
+            }
+        }
+        dismissLoadingDialog();
+    }
 
     @Override
     public void onNoNetworkErrorTip() {
@@ -267,6 +271,12 @@ public abstract class BaseFragement extends Fragment implements MvpView{
     }
 
 
+    private int color = R.color.colorPrimary;
+    private boolean isBarTint = true;
+    protected void  setStatusBarTintResource(int color,boolean isBarTint){
+        this.color = color;
+        this.isBarTint = isBarTint;
+    }
 
     /**
      * Apply KitKat specific translucency.
@@ -281,7 +291,7 @@ public abstract class BaseFragement extends Fragment implements MvpView{
         mTintManager.setStatusBarTintEnabled(true);
         mTintManager.setNavigationBarTintEnabled(true);
 //           mTintManager.setTintColor(getResources().getColor(R.color.colorAccent));
-        mTintManager.setStatusBarTintResource(R.color.colorAccent);//通知栏所需颜色
+        mTintManager.setStatusBarTintResource(color);//通知栏所需颜色
 
     }
 
@@ -297,5 +307,4 @@ public abstract class BaseFragement extends Fragment implements MvpView{
         }
         win.setAttributes(winParams);
     }
-
 }

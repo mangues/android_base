@@ -17,8 +17,6 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-//        initToolbar(false, "zhongguo");
-//        showProgressDialog();
         initTab();
     }
 
@@ -37,8 +35,5 @@ public class MainActivity extends BaseActivity {
         return "首页";
     }
 
-    @Override
-    protected boolean isBack() {
-        return false;
-    }
+
 }

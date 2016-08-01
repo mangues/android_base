@@ -17,8 +17,10 @@
 package com.mangues.lifecircleapp.data.net.retrofitrxjava;
 
 import com.mangues.lifecircleapp.base.BaseBean;
-import com.mangues.lifecircleapp.bean.BaseRes;
-import com.mangues.lifecircleapp.bean.UserRes;
+import com.mangues.lifecircleapp.bean.LocationInfo;
+import com.mangues.lifecircleapp.model.BaseRes;
+import com.mangues.lifecircleapp.model.CircleModel;
+import com.mangues.lifecircleapp.model.UserRes;
 import com.mangues.lifecircleapp.data.net.Constant;
 import com.mangues.lifecircleapp.log.MLogger;
 import com.squareup.okhttp.Headers;
@@ -26,7 +28,6 @@ import com.squareup.okhttp.Interceptor;
 import com.squareup.okhttp.MediaType;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
-import com.squareup.okhttp.RequestBody;
 import com.squareup.okhttp.Response;
 import com.squareup.okhttp.ResponseBody;
 import com.squareup.okhttp.logging.HttpLoggingInterceptor;
@@ -157,6 +158,11 @@ public class NetworkDateSource {
      */
     public Subscription test(String username, String password, Action1<BaseBean> action1, Action1<Throwable> onError){
         return doSubscription(mHttpApi.test(username,password),action1,onError);
+    }
+
+
+    public Subscription circleList(LocationInfo locationInfo, Action1<BaseRes<CircleModel>> action1, Action1<Throwable> onError){
+        return doSubscription(mHttpApi.circleList(locationInfo.getLongitude(),locationInfo.getLatitude()),action1,onError);
     }
 
 

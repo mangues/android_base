@@ -1,6 +1,4 @@
-package com.mangues.lifecircleapp.bean;
-
-import com.mangues.lifecircleapp.base.BaseBean;
+package com.mangues.lifecircleapp.model;
 
 import java.io.Serializable;
 

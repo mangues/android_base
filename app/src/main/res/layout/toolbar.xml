@@ -16,7 +16,7 @@
             android:layout_height="50dp"
             app:navigationIcon="@drawable/common_bg_top_back"
             app:title=" "
-            android:background="@android:color/white"
+            android:background="@color/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay">
             <TextView
                 android:id="@+id/tv_title"
@@ -40,7 +40,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/colorAccent" />
+            android:background="@color/wb_choose_line" />
     </LinearLayout>
 
 

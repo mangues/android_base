@@ -27,8 +27,8 @@
             android:orientation="vertical" >
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:background="@drawable/selector_cb_icon_discover" />
 
             <TextView
@@ -48,8 +48,8 @@
             android:orientation="vertical" >
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:background="@drawable/selector_cb_icon_guanzhu" />
             <TextView
                 android:layout_width="wrap_content"
@@ -67,7 +67,7 @@
             android:orientation="vertical" >
 
             <ImageView
-                android:layout_width="50dp"
+                android:layout_width="60dp"
                 android:layout_height="40dp"
                 android:background="@mipmap/cb_icon_pen_normal" />
 
@@ -90,8 +90,8 @@
             android:orientation="vertical" >
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:background="@drawable/selector_cb_icon_jianyouquan" />
 
             <TextView
@@ -111,8 +111,8 @@
             android:orientation="vertical" >
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:background="@drawable/selector_cb_icon_more" />
 
             <TextView
