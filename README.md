@@ -23,3 +23,20 @@
 
 ##token、sign 认证
 >用户token,和url 的sign认证
+
+
+##定位 高德定位方法
+```
+GaoDeMapLocation.getInstance().startLocation(new GaoDeLocationListener() {
+             @Override
+             public void location(LocationInfo locationInfo) {
+                 circlePresenter.circleList(locationInfo);
+ 
+             }
+ 
+             @Override
+             public void error(AMapLocation location) {
+                 showToast(location.getErrorInfo());
+             }
+         });
+```
