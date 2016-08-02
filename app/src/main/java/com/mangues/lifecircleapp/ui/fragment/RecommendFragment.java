@@ -6,9 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.amap.api.location.AMapLocation;
 import com.mangues.lifecircleapp.R;
 import com.mangues.lifecircleapp.base.basemvp.BasePresenter;
 import com.mangues.lifecircleapp.bean.LocationInfo;
+import com.mangues.lifecircleapp.framework.gaodeMap.GaoDeLocationListener;
+import com.mangues.lifecircleapp.framework.gaodeMap.GaoDeMapLocation;
 import com.mangues.lifecircleapp.log.MLogger;
 import com.mangues.lifecircleapp.mvpview.CircleMvpView;
 import com.mangues.lifecircleapp.presenter.CirclePresenter;
@@ -51,10 +54,18 @@ public class RecommendFragment extends BaseFragement implements CircleMvpView{
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        LocationInfo locationInfo = new LocationInfo();
-        locationInfo.setLongitude(118.685397);
-        locationInfo.setLatitude(32.182469);
-        circlePresenter.circleList(locationInfo);
+        GaoDeMapLocation.getInstance().startLocation(new GaoDeLocationListener() {
+            @Override
+            public void location(LocationInfo locationInfo) {
+                circlePresenter.circleList(locationInfo);
+
+            }
+
+            @Override
+            public void error(AMapLocation location) {
+                showToast(location.getErrorInfo());
+            }
+        });
     }
 
 

@@ -4,11 +4,12 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
 import com.mangues.lifecircleapp.R;
+import com.mangues.lifecircleapp.framework.gaodeMap.CheckPermissionsActivity;
 import com.mangues.lifecircleapp.ui.fragment.RecommendFragment;
 
 import butterknife.ButterKnife;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends CheckPermissionsActivity {
 
     private Fragment recommentFragment;
 

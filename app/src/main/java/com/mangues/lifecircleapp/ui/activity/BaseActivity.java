@@ -154,7 +154,9 @@ public abstract class BaseActivity extends AppCompatActivity implements MvpView 
             }
         }
     }
-    protected abstract CharSequence getTopTitle() ;
+    protected  CharSequence getTopTitle(){
+        return getString(R.string.app_name);
+    } ;
 //    protected abstract boolean isBack() ;
 
 
