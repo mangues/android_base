@@ -4,8 +4,13 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
 import com.mangues.lifecircleapp.R;
+import com.mangues.lifecircleapp.data.database.GreenDaoManager;
+import com.mangues.lifecircleapp.data.database.gen.TestDao;
 import com.mangues.lifecircleapp.framework.gaodeMap.CheckPermissionsActivity;
+import com.mangues.lifecircleapp.log.MLogger;
 import com.mangues.lifecircleapp.ui.fragment.RecommendFragment;
+
+import java.util.List;
 
 import butterknife.ButterKnife;
 
@@ -28,6 +33,8 @@ public class MainActivity extends CheckPermissionsActivity {
         // 添加显示第一个fragment
         getSupportFragmentManager().beginTransaction().add(R.id.frame_content, recommentFragment).show(recommentFragment).commit();
 //                add(R.id.frame_content, recommentFragment).hide(recommentFragment).
+
+
     }
 
 

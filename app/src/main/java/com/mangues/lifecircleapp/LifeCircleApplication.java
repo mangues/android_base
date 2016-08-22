@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 
+import com.mangues.lifecircleapp.data.database.GreenDaoManager;
 import com.mangues.lifecircleapp.injection.component.ApplicationComponent;
 import com.mangues.lifecircleapp.injection.module.ApplicationModule;
 import com.mangues.lifecircleapp.util.ImageOptHelper;
@@ -36,6 +37,8 @@ public class LifeCircleApplication extends Application {
         sInstance = this;
         initImageLoader(getApplicationContext());
         initLogger();
+        //初始化greenDao数据库
+        GreenDaoManager.getInstance();
     }
 
 
