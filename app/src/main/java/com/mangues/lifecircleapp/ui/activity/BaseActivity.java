@@ -9,8 +9,6 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Window;
@@ -21,18 +19,20 @@ import android.widget.Toast;
 
 import com.leo.simplearcloader.ArcConfiguration;
 import com.leo.simplearcloader.SimpleArcDialog;
-import com.mangues.lifecircleapp.injection.component.DaggerActivityComponent;
 import com.mangues.lifecircleapp.LifeCircleApplication;
 import com.mangues.lifecircleapp.base.basemvp.BasePresenter;
 import com.mangues.lifecircleapp.base.basemvp.MvpView;
 import com.mangues.lifecircleapp.bean.MessageEvent;
 import com.mangues.lifecircleapp.injection.component.ActivityComponent;
+import com.mangues.lifecircleapp.injection.component.DaggerActivityComponent;
 import com.mangues.lifecircleapp.injection.module.ActivityModule;
-import com.mangues.lifecircleapp.log.MLogger;
-import com.mangues.lifecircleapp.util.*;
 
 import com.mangues.lifecircleapp.R;
-import com.mangues.lifecircleapp.util.Dialog.DialogUtils;
+import com.mangues.mglib.framework.gaodeMap.CheckPermissionsActivity;
+import com.mangues.mglib.util.Dialog.DialogUtils;
+import com.mangues.mglib.util.JSToast;
+import com.mangues.mglib.util.PubUtils;
+import com.mangues.mglib.util.log.MLogger;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 //import com.robin.lazy.logger.LazyLogger;
@@ -44,7 +44,7 @@ import de.greenrobot.event.EventBus;
  * Created by mangues on 16/7/8.
  */
 
-public abstract class BaseActivity extends AppCompatActivity implements MvpView {
+public abstract class BaseActivity extends CheckPermissionsActivity implements MvpView {
     private Toolbar mToolbar;
     protected String TAG =      "BaseActivity";
     protected ImageLoader       imageLoader;

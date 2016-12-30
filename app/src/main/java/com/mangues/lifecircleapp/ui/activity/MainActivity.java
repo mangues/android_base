@@ -3,18 +3,18 @@ package com.mangues.lifecircleapp.ui.activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
+import com.amap.api.location.AMapLocation;
 import com.mangues.lifecircleapp.R;
-import com.mangues.lifecircleapp.data.database.GreenDaoManager;
-import com.mangues.lifecircleapp.data.database.gen.TestDao;
-import com.mangues.lifecircleapp.framework.gaodeMap.CheckPermissionsActivity;
-import com.mangues.lifecircleapp.log.MLogger;
 import com.mangues.lifecircleapp.ui.fragment.RecommendFragment;
+import com.mangues.mglib.bean.LocationInfo;
+import com.mangues.mglib.framework.gaodeMap.GaoDeLocationListener;
+import com.mangues.mglib.framework.gaodeMap.GaoDeMapLocation;
 
 import java.util.List;
 
 import butterknife.ButterKnife;
 
-public class MainActivity extends CheckPermissionsActivity {
+public class MainActivity extends BaseActivity {
 
     private Fragment recommentFragment;
 
@@ -35,6 +35,17 @@ public class MainActivity extends CheckPermissionsActivity {
 //                add(R.id.frame_content, recommentFragment).hide(recommentFragment).
 
 
+        GaoDeMapLocation.getInstance(mContext).startLocation(new GaoDeLocationListener() {
+            @Override
+            public void location(LocationInfo locationInfo) {
+                showToast(locationInfo.getLatitude()+"");
+            }
+
+            @Override
+            public void error(AMapLocation location) {
+
+            }
+        });
     }
 
 

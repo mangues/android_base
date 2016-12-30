@@ -5,7 +5,6 @@ import com.mangues.lifecircleapp.data.database.bean.Test;
 import com.mangues.lifecircleapp.data.database.gen.DaoMaster;
 import com.mangues.lifecircleapp.data.database.gen.DaoSession;
 import com.mangues.lifecircleapp.data.database.gen.TestDao;
-import com.mangues.lifecircleapp.log.MLogger;
 
 import java.util.List;
 

@@ -19,7 +19,7 @@ package com.mangues.lifecircleapp.data.net.retrofitrxjava;
 import android.app.Activity;
 
 import com.mangues.lifecircleapp.base.basemvp.MvpView;
-import com.mangues.lifecircleapp.util.PubUtils;
+import com.mangues.mglib.util.PubUtils;
 
 import java.io.IOException;
 import java.net.ConnectException;

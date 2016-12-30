@@ -2,7 +2,7 @@ package com.mangues.lifecircleapp.data.net.retrofitrxjava;
 
 import com.mangues.lifecircleapp.data.cache.SecureSharedPreferences;
 import com.mangues.lifecircleapp.data.net.Constant;
-import com.mangues.lifecircleapp.util.Md5;
+import com.mangues.mglib.util.Md5;
 import com.squareup.okhttp.Request;
 
 /**

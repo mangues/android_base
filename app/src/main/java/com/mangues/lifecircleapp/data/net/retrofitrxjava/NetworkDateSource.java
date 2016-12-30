@@ -22,7 +22,7 @@ import com.mangues.lifecircleapp.model.BaseRes;
 import com.mangues.lifecircleapp.model.CircleModel;
 import com.mangues.lifecircleapp.model.UserRes;
 import com.mangues.lifecircleapp.data.net.Constant;
-import com.mangues.lifecircleapp.log.MLogger;
+import com.mangues.mglib.util.log.MLogger;
 import com.squareup.okhttp.Headers;
 import com.squareup.okhttp.Interceptor;
 import com.squareup.okhttp.MediaType;

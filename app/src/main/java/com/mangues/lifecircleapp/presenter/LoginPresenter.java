@@ -23,9 +23,9 @@ import com.mangues.lifecircleapp.data.cache.SecureSharedPreferences;
 import com.mangues.lifecircleapp.data.enjine.GlobalVariables;
 import com.mangues.lifecircleapp.data.net.retrofitrxjava.ErrorAction;
 import com.mangues.lifecircleapp.data.net.retrofitrxjava.NetworkDateSource;
-import com.mangues.lifecircleapp.log.MLogger;
 import com.mangues.lifecircleapp.data.net.retrofitrxjava.SubscribeResult;
 import com.mangues.lifecircleapp.mvpview.LoginMvpView;
+import com.mangues.mglib.util.log.MLogger;
 
 
 import javax.inject.Inject;

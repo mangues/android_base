@@ -6,8 +6,9 @@ import android.content.Context;
 
 import com.mangues.lifecircleapp.data.database.GreenDaoManager;
 import com.mangues.lifecircleapp.injection.component.ApplicationComponent;
+import com.mangues.lifecircleapp.injection.component.DaggerApplicationComponent;
 import com.mangues.lifecircleapp.injection.module.ApplicationModule;
-import com.mangues.lifecircleapp.util.ImageOptHelper;
+import com.mangues.mglib.util.ImageOptHelper;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -17,7 +18,6 @@ import com.orhanobut.logger.Logger;
 //import com.robin.lazy.logger.Log4JTool;
 //import com.robin.lazy.logger.LogLevel;
 //import com.robin.lazy.logger.PrinterType;
-import com.mangues.lifecircleapp.injection.component.DaggerApplicationComponent;
 //import org.apache.log4j.Level;
 
 import java.util.LinkedList;

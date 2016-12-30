@@ -26,18 +26,13 @@ import com.mangues.lifecircleapp.data.enjine.GlobalVariables;
 import com.mangues.lifecircleapp.data.net.retrofitrxjava.ErrorAction;
 import com.mangues.lifecircleapp.data.net.retrofitrxjava.NetworkDateSource;
 import com.mangues.lifecircleapp.data.net.retrofitrxjava.SubscribeResult;
-import com.mangues.lifecircleapp.log.MLogger;
 import com.mangues.lifecircleapp.mvpview.CircleMvpView;
 
 import javax.inject.Inject;
 
 import rx.Subscription;
 
-/**
- * <br /> author: chenshufei
- * <br /> date: 16/1/18
- * <br /> email: chenshufei2@sina.com
- */
+
 public class CirclePresenter extends BasePresenter<CircleMvpView> {
 
     private NetworkDateSource mNetworkDateSource;

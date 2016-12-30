@@ -23,7 +23,7 @@ import com.mangues.lifecircleapp.LifeCircleApplication;
 import com.mangues.lifecircleapp.base.BaseBean;
 import com.mangues.lifecircleapp.base.CodeContant;
 import com.mangues.lifecircleapp.ui.activity.LoginActivity;
-import com.mangues.lifecircleapp.util.PubUtils;
+import com.mangues.mglib.util.PubUtils;
 
 
 import rx.functions.Action1;
