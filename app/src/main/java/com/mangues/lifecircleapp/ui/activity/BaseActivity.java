@@ -20,14 +20,14 @@ import android.widget.Toast;
 import com.leo.simplearcloader.ArcConfiguration;
 import com.leo.simplearcloader.SimpleArcDialog;
 import com.mangues.lifecircleapp.LifeCircleApplication;
-import com.mangues.lifecircleapp.base.basemvp.BasePresenter;
-import com.mangues.lifecircleapp.base.basemvp.MvpView;
 import com.mangues.lifecircleapp.bean.MessageEvent;
 import com.mangues.lifecircleapp.injection.component.ActivityComponent;
 import com.mangues.lifecircleapp.injection.component.DaggerActivityComponent;
 import com.mangues.lifecircleapp.injection.module.ActivityModule;
 
 import com.mangues.lifecircleapp.R;
+import com.mangues.mglib.base.basemvp.BasePresenter;
+import com.mangues.mglib.base.basemvp.MvpView;
 import com.mangues.mglib.framework.gaodeMap.CheckPermissionsActivity;
 import com.mangues.mglib.util.Dialog.DialogUtils;
 import com.mangues.mglib.util.JSToast;

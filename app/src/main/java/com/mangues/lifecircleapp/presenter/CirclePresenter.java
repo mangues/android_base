@@ -16,9 +16,7 @@
 
 package com.mangues.lifecircleapp.presenter;
 
-import com.mangues.lifecircleapp.base.basemvp.BasePresenter;
 import com.mangues.lifecircleapp.bean.LocationInfo;
-import com.mangues.lifecircleapp.model.BaseRes;
 import com.mangues.lifecircleapp.model.CircleModel;
 import com.mangues.lifecircleapp.model.UserRes;
 import com.mangues.lifecircleapp.data.cache.SecureSharedPreferences;
@@ -27,6 +25,8 @@ import com.mangues.lifecircleapp.data.net.retrofitrxjava.ErrorAction;
 import com.mangues.lifecircleapp.data.net.retrofitrxjava.NetworkDateSource;
 import com.mangues.lifecircleapp.data.net.retrofitrxjava.SubscribeResult;
 import com.mangues.lifecircleapp.mvpview.CircleMvpView;
+import com.mangues.mglib.base.BaseRes;
+import com.mangues.mglib.base.basemvp.BasePresenter;
 
 import javax.inject.Inject;
 

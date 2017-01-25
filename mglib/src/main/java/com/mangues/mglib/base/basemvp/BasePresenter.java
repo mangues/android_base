@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.mangues.lifecircleapp.base.basemvp;
+package com.mangues.mglib.base.basemvp;
 
 import rx.Subscription;
 import rx.subscriptions.CompositeSubscription;

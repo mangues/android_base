@@ -16,11 +16,11 @@
 
 package com.mangues.lifecircleapp.data.net.retrofitrxjava;
 
-import com.mangues.lifecircleapp.base.BaseBean;
 import com.mangues.lifecircleapp.bean.LocationInfo;
-import com.mangues.lifecircleapp.model.BaseRes;
 import com.mangues.lifecircleapp.model.CircleModel;
 import com.mangues.lifecircleapp.model.UserRes;
+import com.mangues.mglib.base.BaseBean;
+import com.mangues.mglib.base.BaseRes;
 
 import butterknife.Bind;
 import retrofit.http.Body;

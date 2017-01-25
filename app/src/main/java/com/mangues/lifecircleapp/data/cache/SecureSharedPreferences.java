@@ -19,13 +19,11 @@ package com.mangues.lifecircleapp.data.cache;
 import android.content.SharedPreferences;
 
 import com.mangues.lifecircleapp.LifeCircleApplication;
+import com.mangues.mglib.data.cache.SecurePreferences;
 
 
 /**
  * 获取安全的SharePreferences，采用RSA 加salt及向量的 对key与value一起加密的SharePreferences
- * <br /> author: chenshufei
- * <br /> date: 15/10/9
- * <br /> email: chenshufei2@sina.com
  */
 public class SecureSharedPreferences {
     

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016. chenshufei
+ * Copyright 2015. chenshufei
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,15 +14,34 @@
  * limitations under the License.
  */
 
-package com.mangues.lifecircleapp.base.basemvp;
+package com.mangues.mglib.threadpool;
 
 /**
- * Presenter 主持者
+ * 线程任务类
  * <br /> author: chenshufei
- * <br /> date: 16/1/15
+ * <br /> date: 15/10/9
  * <br /> email: chenshufei2@sina.com
  */
-public interface Presenter<V extends MvpView> {
-    void attachView(V mvpView);
-    void detachView();
+public abstract class ThreadTask implements Runnable{
+    /**
+     * 开始前执行的方法，子线程中
+     */
+    public void onBefore(){}
+
+    @Override
+    public void run() {
+        onBefore();
+        onRun();
+        onAfter();
+    }
+
+    /**
+     * 重写以执行任务
+     */
+    protected abstract void onRun();
+
+    /**
+     * execute后执行的方法，子线程中
+     */
+    public void onAfter(){}
 }

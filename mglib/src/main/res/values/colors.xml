@@ -11,5 +11,13 @@
     <color name="txt_off">#ababab</color>
     <color name="grey_e6e">#e6e6e6</color>
     <color name="white">#ffffff</color>
-
+    <color name="black_9b9">#9b9b9b</color>
+    <color name="tv_bule">#4d93fc</color>
+    <color name="lc_main_red">#fc411d</color>
+    <color name="lc_main_line">#e3e3e3</color>
+    <color name="lc_line">#dddddd</color>
+    <color name="lc_window_bg">#f8f8f8</color>
+    <color name="lc_main_txt">#4c4c4c</color>
+    <color name="lc_main_hint_txt">#626262</color>
+    <color name="lc_txt_red">#f13f2f</color>
 </resources>

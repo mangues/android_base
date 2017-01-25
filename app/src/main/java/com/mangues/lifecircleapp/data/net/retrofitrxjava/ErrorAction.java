@@ -18,7 +18,7 @@ package com.mangues.lifecircleapp.data.net.retrofitrxjava;
 
 import android.app.Activity;
 
-import com.mangues.lifecircleapp.base.basemvp.MvpView;
+import com.mangues.mglib.base.basemvp.MvpView;
 import com.mangues.mglib.util.PubUtils;
 
 import java.io.IOException;
@@ -26,11 +26,6 @@ import java.net.ConnectException;
 
 import rx.functions.Action1;
 
-/**
- * <br /> author: chenshufei
- * <br /> date: 16/3/15
- * <br /> email: chenshufei2@sina.com
- */
 public abstract class ErrorAction implements Action1<Throwable> {
 
     private MvpView mvpView;

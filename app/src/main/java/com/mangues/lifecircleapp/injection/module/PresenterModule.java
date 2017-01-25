@@ -17,16 +17,12 @@
 package com.mangues.lifecircleapp.injection.module;
 
 
-import com.mangues.lifecircleapp.base.basemvp.BasePresenter;
+
+import com.mangues.mglib.base.basemvp.BasePresenter;
 
 import dagger.Module;
 import dagger.Provides;
 
-/**
- * <br /> author: chenshufei
- * <br /> date: 16/1/13
- * <br /> email: chenshufei2@sina.com
- */
 @Module
 public class PresenterModule {
     private BasePresenter mBasePresenter;

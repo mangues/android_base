@@ -8,14 +8,14 @@ import android.view.ViewGroup;
 
 import com.amap.api.location.AMapLocation;
 import com.mangues.lifecircleapp.R;
-import com.mangues.lifecircleapp.base.basemvp.BasePresenter;
 import com.mangues.lifecircleapp.mvpview.CircleMvpView;
 import com.mangues.lifecircleapp.presenter.CirclePresenter;
-import com.mangues.lifecircleapp.view.MyListView;
+import com.mangues.mglib.base.basemvp.BasePresenter;
 import com.mangues.mglib.bean.LocationInfo;
 import com.mangues.mglib.framework.gaodeMap.GaoDeLocationListener;
 import com.mangues.mglib.framework.gaodeMap.GaoDeMapLocation;
 import com.mangues.mglib.util.log.MLogger;
+import com.mangues.mglib.view.MyListView;
 
 import java.util.List;
 

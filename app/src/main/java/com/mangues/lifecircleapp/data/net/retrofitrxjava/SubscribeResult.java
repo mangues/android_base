@@ -20,9 +20,9 @@ package com.mangues.lifecircleapp.data.net.retrofitrxjava;
 import android.content.Intent;
 
 import com.mangues.lifecircleapp.LifeCircleApplication;
-import com.mangues.lifecircleapp.base.BaseBean;
 import com.mangues.lifecircleapp.base.CodeContant;
 import com.mangues.lifecircleapp.ui.activity.LoginActivity;
+import com.mangues.mglib.base.BaseBean;
 import com.mangues.mglib.util.PubUtils;
 
 

@@ -8,9 +8,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.mangues.lifecircleapp.R;
-import com.mangues.lifecircleapp.base.basemvp.BasePresenter;
 import com.mangues.lifecircleapp.mvpview.LoginMvpView;
 import com.mangues.lifecircleapp.presenter.LoginPresenter;
+import com.mangues.mglib.base.basemvp.BasePresenter;
 
 import javax.inject.Inject;
 

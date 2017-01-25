@@ -16,8 +16,6 @@
 
 package com.mangues.lifecircleapp.presenter;
 
-import com.mangues.lifecircleapp.base.basemvp.BasePresenter;
-import com.mangues.lifecircleapp.model.BaseRes;
 import com.mangues.lifecircleapp.model.UserRes;
 import com.mangues.lifecircleapp.data.cache.SecureSharedPreferences;
 import com.mangues.lifecircleapp.data.enjine.GlobalVariables;
@@ -25,6 +23,8 @@ import com.mangues.lifecircleapp.data.net.retrofitrxjava.ErrorAction;
 import com.mangues.lifecircleapp.data.net.retrofitrxjava.NetworkDateSource;
 import com.mangues.lifecircleapp.data.net.retrofitrxjava.SubscribeResult;
 import com.mangues.lifecircleapp.mvpview.LoginMvpView;
+import com.mangues.mglib.base.BaseRes;
+import com.mangues.mglib.base.basemvp.BasePresenter;
 import com.mangues.mglib.util.log.MLogger;
 
 
@@ -32,11 +32,6 @@ import javax.inject.Inject;
 
 import rx.Subscription;
 
-/**
- * <br /> author: chenshufei
- * <br /> date: 16/1/18
- * <br /> email: chenshufei2@sina.com
- */
 public class LoginPresenter extends BasePresenter<LoginMvpView> {
 
     private NetworkDateSource mNetworkDateSource;

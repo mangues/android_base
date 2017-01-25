@@ -13,12 +13,12 @@
             android:id="@+id/appbar"
             layout="@layout/toolbar" />
 
-       <com.mangues.lifecircleapp.view.MyListView
+       <com.mangues.mglib.view.MyListView
            android:id="@+id/list"
            android:layout_width="match_parent"
            android:layout_height="match_parent">
 
-       </com.mangues.lifecircleapp.view.MyListView>
+       </com.mangues.mglib.view.MyListView>
 
 
     </android.support.design.widget.CoordinatorLayout>

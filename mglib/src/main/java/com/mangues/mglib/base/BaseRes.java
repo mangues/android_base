@@ -1,6 +1,4 @@
-package com.mangues.lifecircleapp.model;
-
-import com.mangues.lifecircleapp.base.BaseBean;
+package com.mangues.mglib.base;
 
 /**
  * Created by mangues on 16/7/27.

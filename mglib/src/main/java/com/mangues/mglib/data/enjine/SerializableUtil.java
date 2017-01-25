@@ -1,8 +1,8 @@
-package com.mangues.lifecircleapp.data.enjine;
+package com.mangues.mglib.data.enjine;
 
+import android.content.Context;
 import android.os.Environment;
 
-import com.mangues.lifecircleapp.LifeCircleApplication;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,20 +14,17 @@ import java.io.ObjectOutputStream;
 import java.io.StreamCorruptedException;
 
 /**
- * <br /> author: chenshufei
- * <br /> date: 16/4/16
- * <br /> email: chenshufei2@sina.com
  */
 public class SerializableUtil {
 
     private static String sdCardDir = "/CacheObjectData/";
 
-    private static String getCacheObjectFileDir(){
+    private static String getCacheObjectFileDir(Context mContext){
         String retVal = null;
         if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())){
-            retVal = LifeCircleApplication.getInstance().getExternalCacheDir()+sdCardDir;
+            retVal = mContext.getExternalCacheDir()+sdCardDir;
         }else{
-            retVal = LifeCircleApplication.getInstance().getCacheDir()+sdCardDir;
+            retVal = mContext.getCacheDir()+sdCardDir;
         }
         return retVal;
     }
@@ -37,11 +34,11 @@ public class SerializableUtil {
      * @param fileName
      * @param object
      */
-    public static final void saveObject(String fileName, Object object){
+    public static final void saveObject(String fileName, Object object,Context mContext){
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
         try{
-            File dir = new File(getCacheObjectFileDir());
+            File dir = new File(getCacheObjectFileDir(mContext));
             if (!dir.exists()){
                 boolean mkdirs = dir.mkdirs();
             }
@@ -67,8 +64,8 @@ public class SerializableUtil {
         }
     }
 
-    public static final Object restoreObject(String fileName){
-        File f = new File(getCacheObjectFileDir(),fileName);
+    public static final Object restoreObject(String fileName,Context mContext){
+        File f = new File(getCacheObjectFileDir(mContext),fileName);
         if (!f.exists()){
             return null;
         }
